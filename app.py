@@ -2,16 +2,11 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from PIL import Image  
 import numpy as np
-from keras import backend as K
-from tensorflow.python.lib.io import file_io
-import boto3
-from keras.models import load_model
 from streamlit_folium import folium_static
 import folium
 import pandas as pd 
 import pickle 
 
-#tensorflow==1.14
 #keras==2.3.0
 
 # loading in the model to predict on the data 
