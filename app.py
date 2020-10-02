@@ -87,7 +87,9 @@ def accept_user_data():
     wind = st.sidebar.text_input("Enter the wind: ",'2.2')
     rain = st.sidebar.text_input("Enter the rain: ",'0')
     result =""
-        
+
+    user_prediction_data = np.array([X,Y,day,DMC,DC,ISI,temp,RH,wind,rain]).reshape(1,-1)
+	
     if st.sidebar.button("Predict"): 
         result = prediction(X,Y,month,day,FFMC,DMC,DC,ISI,temp,RH,wind,rain) 
     st.sidebar.success('The output is {}'.format(result)) 
