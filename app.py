@@ -1,7 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-from PIL import Image
-from source import preprocess_input_image, batch_predict, conv_float_int, combine_image, load_trained_model, burn_area   
+from PIL import Image  
 import numpy as np
 from keras import backend as K
 from tensorflow.python.lib.io import file_io
