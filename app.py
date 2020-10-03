@@ -10,7 +10,7 @@ from streamlit_folium import folium_static
 
 #tensorflow==1.14
 #keras==2.3.0
-
+#scikit-learn==0.20.3
 
     
 
