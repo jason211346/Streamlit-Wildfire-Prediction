@@ -2,7 +2,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
-import folium
 import pandas as pd 
 import pickle 
 import pydeck as pdk
