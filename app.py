@@ -25,7 +25,7 @@ import folium
     
 
 # loading in the model to predict on the data 
-pickle_in = open('./app/svc.pkl', 'rb') 
+pickle_in = open('svc.pkl', 'rb') 
 classifier = pickle.load(pickle_in) 
 
 
@@ -110,12 +110,12 @@ def accept_user_data():
 def main():
 
 
-    with open("./app/style.css") as f:
+    with open("style.css") as f:
         st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
     st.title("Wild Fire Detection App")
 
-    uploaded_image = Image.open('./app/test_images/image2.png')
+    uploaded_image = Image.open('test_images/image2.png')
     st.markdown("** Original Raw Image: **")
     st.image(uploaded_image, width = 500)
     
