@@ -68,24 +68,6 @@ def accept_user_data():
     rain = st.sidebar.text_input("Rain(mm/m2): ",'0')
     result =""
     
-    
-    #### Show the Satellite
-    st.markdown("** The Latest Fire Location from Our Satellite **: ")
-    token = "pk.eyJ1IjoiZTk2MDMxNDEzIiwiYSI6ImNqdDcxbW1kMzBhbWE0M25uYmswaWNnc3EifQ.xUELGj4ak4EIaPPYQUnYug" # your mapbox token
-    tileurl = 'https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=' + str(token)
-    # center on Liberty Bell
-    m = folium.Map(location=[22.999727, 121.127028], zoom_start=2, tiles=tileurl, attr='Mapbox')
-    
-    # add marker for Fire Location
-    satellitePlot = showMap()
-    maps = satellitePlot[['latitude','longitude']]
-    locations = maps[['latitude', 'longitude']]
-    locationlist = locations.values.tolist()
-    for point in range(1, 101):
-        folium.Marker(locationlist[-point], icon=folium.Icon(color='orange', icon_color='red', icon='fire',radius=4, angle=0)).add_to(m)
-    folium_static(m)
-
-    
     if st.sidebar.button("Predict"): 
         result = prediction(X,Y,month,day,FFMC,DMC,DC,ISI,temp,RH,wind,rain) 
     st.sidebar.success('The output is {}'.format(result)) 
@@ -106,6 +88,21 @@ def main():
     
     accept_user_data()
     
+    #### Show the Satellite
+    st.markdown("** The Latest Fire Location from Our Satellite **: ")
+    token = "pk.eyJ1IjoiZTk2MDMxNDEzIiwiYSI6ImNqdDcxbW1kMzBhbWE0M25uYmswaWNnc3EifQ.xUELGj4ak4EIaPPYQUnYug" # your mapbox token
+    tileurl = 'https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=' + str(token)
+    # center on Liberty Bell
+    m = folium.Map(location=[22.999727, 121.127028], zoom_start=2, tiles=tileurl, attr='Mapbox')
+    
+    # add marker for Fire Location
+    satellitePlot = showMap()
+    maps = satellitePlot[['latitude','longitude']]
+    locations = maps[['latitude', 'longitude']]
+    locationlist = locations.values.tolist()
+    for point in range(1, 101):
+        folium.Marker(locationlist[-point], icon=folium.Icon(color='orange', icon_color='red', icon='fire',radius=4, angle=0)).add_to(m)
+    folium_static(m)
     
     plotData = showMap()
     st.subheader("Fire Visualization for the past 48 hours:")
