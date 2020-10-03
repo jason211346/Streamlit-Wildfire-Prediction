@@ -1,17 +1,11 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 from PIL import Image
-import random
 import numpy as np
-#from keras import backend as K
-#from tensorflow.python.lib.io import file_io
-#import boto3
-#from keras.models import load_model
 from streamlit_folium import folium_static
 import folium
 import pandas as pd 
 import pickle 
-import pydeck as pdk
 from streamlit_folium import folium_static
 import folium
 #tensorflow==1.14
