@@ -75,8 +75,8 @@ def accept_user_data():
     tileurl = 'https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=' + str(token)
     # center on Liberty Bell
     m = folium.Map(location=[22.999727, 121.127028], zoom_start=2, tiles=tileurl, attr='Mapbox')
-    # add marker for Fire Location
     
+    # add marker for Fire Location
     satellitePlot = showMap()
     maps = satellitePlot[['latitude','longitude']]
     locations = maps[['latitude', 'longitude']]
