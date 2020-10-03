@@ -71,7 +71,7 @@ def accept_user_data():
     if st.sidebar.button("Predict"): 
         result = prediction(X,Y,month,day,FFMC,DMC,DC,ISI,temp,RH,wind,rain) 
     st.sidebar.success('The output is {}'.format(result)) 
-    #return user_prediction_data
+    
 
 
 def main():
