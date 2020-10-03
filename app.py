@@ -114,8 +114,7 @@ def main():
     st.image(uploaded_image, width = 500)
     
     accept_user_data()
-    showMap()
-    
+        
     plotData = showMap()
     st.subheader("Fire Visualization for past 48 hours:")
     st.map(plotData, zoom = 0)
