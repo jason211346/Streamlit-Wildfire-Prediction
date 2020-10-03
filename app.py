@@ -70,17 +70,14 @@ def accept_user_data():
     result =""
     
     
-    #### Show the picture
+    #### Show the Satellite
     st.markdown("** The Latest Fire Location from Our Satellite **: ")
     token = "pk.eyJ1IjoiZTk2MDMxNDEzIiwiYSI6ImNqdDcxbW1kMzBhbWE0M25uYmswaWNnc3EifQ.xUELGj4ak4EIaPPYQUnYug" # your mapbox token
     tileurl = 'https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=' + str(token)
     # center on Liberty Bell
     m = folium.Map(location=[22.999727, 121.127028], zoom_start=2, tiles=tileurl, attr='Mapbox')
-    # add marker for Liberty Bell
-    tooltip = "TW"
-    folium.Marker(
-            [25.042843, 121.560666], popup="TW", tooltip=tooltip
-        ).add_to(m)
+    # add marker for Fire Location
+    
     satellitePlot = showMap()
     maps = satellitePlot[['latitude','longitude']]
     locations = maps[['latitude', 'longitude']]
@@ -88,12 +85,7 @@ def accept_user_data():
     for point in range(1, 101):
         folium.Marker(locationlist[-point], icon=folium.Icon(color='orange', icon_color='red', icon='fire',radius=4, angle=0)).add_to(m)
     folium_static(m)
-        # call to render Folium map in Streamlit
 
-    
-    
-    
-    #user_prediction_data = np.array([X,Y,day,DMC,DC,ISI,temp,RH,wind,rain]).reshape(1,-1)
     
     if st.sidebar.button("Predict"): 
         result = prediction(X,Y,month,day,FFMC,DMC,DC,ISI,temp,RH,wind,rain) 
