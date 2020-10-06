@@ -1,6 +1,6 @@
 # Streamlit-Wildfire-Prediction
 
-Machine Learning model is from [this project](https://github.com/e96031413/Forest-Fire-Area-Classification)
+Machine Learning model is from [Forest-Fire-Area-Classification ](https://github.com/e96031413/Forest-Fire-Area-Classification)
 
 Reference : 
 [streamlit-folium](https://discuss.streamlit.io/t/ann-streamlit-folium-a-component-for-rendering-folium-maps/4367)、
