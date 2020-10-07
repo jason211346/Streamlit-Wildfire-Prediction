@@ -92,7 +92,7 @@ def main():
     st.markdown("** The Latest Fire Location from Our Satellite **: ")
     token = "pk.eyJ1IjoiZTk2MDMxNDEzIiwiYSI6ImNqdDcxbW1kMzBhbWE0M25uYmswaWNnc3EifQ.xUELGj4ak4EIaPPYQUnYug" # your mapbox token
     tileurl = 'https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=' + str(token)
-    # center on Liberty Bell
+    # center
     m = folium.Map(location=[22.999727, 121.127028], zoom_start=2, tiles=tileurl, attr='Mapbox')
     
     # add marker for Fire Location
