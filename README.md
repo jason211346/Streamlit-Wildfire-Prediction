@@ -10,9 +10,9 @@ We compare serveral different ML alogthrims,More information about the Machine L
 
 Here, we use Streamlit for web deployment and have deployed the model on the website for users to utilize.
 
-<img src="web_img/streamlit_web_img1.png" alt="drawing" width="800"/>
+<img src="web_img/streamlit_web_img1.png" alt="drawing" width="400"/>
 
-<img src="web_img/streamlit_web_img2.png" alt="drawing" width="800"/>
+<img src="web_img/streamlit_web_img2.png" alt="drawing" width="400"/>
 
 
 
